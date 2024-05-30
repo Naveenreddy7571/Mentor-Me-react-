@@ -1,0 +1,47 @@
+.sidebaroption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 20px;
+}
+
+.sidebaroption:hover {
+    background-color: var(--backgroundcolor);
+    border-radius: 30px;
+    transition: color 150ms ease-out;
+}
+
+.sidebaroption .material-icons {
+    padding: 20px;
+}
+
+.sidebaroption h2 {
+    font-weight: 800;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+#nav-bar-button
+{
+    border: none;
+    background-color: var(--backgroundcolor);
+    cursor: pointer;
+}
+
+.active {
+    color: var(--color);
+}
+
+.sidebar {
+    border-right: 1px solid var(--backgroundcolor);
+    display: flex;
+    flex-direction: column;
+    flex: 0.2;
+    min-width: 250px;
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 10px;
+    gap: 17px;
+    float: left;
+
+}
