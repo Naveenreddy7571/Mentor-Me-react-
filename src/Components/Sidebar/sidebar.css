@@ -28,8 +28,9 @@
     cursor: pointer;
 }
 
-.active {
-    color: var(--color);
+.active
+{
+    color:#8C52FF;
 }
 
 .sidebar {

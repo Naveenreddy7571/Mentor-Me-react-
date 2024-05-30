@@ -32,8 +32,11 @@ function Sidebar({ selectedComponent, setSelectedComponent }) {
       {sideBarDetails.map((value, index) => (
         <div id="sidebar-optn" className="sidebaroption" key={index}>
           {value.icon}
-          <button id="nav-bar-button" onClick={() => handleClick(value.name)}>
-            <h2>{value.name}</h2>
+          <button 
+          id="nav-bar-button" 
+          onClick={() => handleClick(value.name)}
+          >
+            <h2 className={(selectedComponent === value.name)?('active'):('')}>{value.name}</h2>
           </button>
         </div>
       ))}
