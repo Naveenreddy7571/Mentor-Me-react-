@@ -9,21 +9,21 @@ import { useContext } from "react";
  
 function Post({ props, isPopupVisible, setIsPopupVisible }) {
   let currentdate = new Date();
-  const { commentPopupVisible, setCommentPopupVisible } = useContext(CommentContext);
+  const { isCommentPopupVisible, setisCommentPopupVisible } = useContext(CommentContext);
 
   const [likes, setLikes] = useState(0);
   const LikeBtnDiv = useRef(null);
 
   const handleCommentClick = () => {
-    setCommentPopupVisible(true);
+    setisCommentPopupVisible(true);
   };
 
   const handleCloseClick = () => {
-    setCommentPopupVisible(false);
+    setisCommentPopupVisible(false);
   };
 
   const handlePostClick = () => {
-    setCommentPopupVisible(false);
+    setisCommentPopupVisible(false);
   };
 
   const LikedPostFunction = useCallback(() => {

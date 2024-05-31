@@ -8,10 +8,10 @@ import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 
 function RightSidebar() {
-    let names = [{ name: "Abdul", userid: "abc@123" },
+    let names = [
+    { name: "Abdul", userid: "abc@123" },
     { name: "Maha sai", userid: "mahasai@123" },
     { name: "Naveen", userid: "naveen@123" }
-
     ]
     let currentdate = new Date();
 
@@ -20,7 +20,6 @@ function RightSidebar() {
             <div className="right_sidebar">
                 <div className="Question-of-the-day">
                     <h2>Question of the day</h2>
-
                     <div className="question-of-the-day-post">
                         <div className="question-of-the-day-post_avatar">
                             <img src={profilePic} alt="Profile" />

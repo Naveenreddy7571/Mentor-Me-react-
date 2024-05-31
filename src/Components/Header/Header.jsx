@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Logo from "../../images/Logo.png";
 import profile from "../../images/profile-pic.jpeg";
@@ -12,6 +12,7 @@ import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useMemo } from "react";
 function Header() {
+  const [isProfileDropDownActivated,setisProfileDropDownActivated] = useState(false);
   return (
     <div>
       <div className="header" id="header">
@@ -36,15 +37,22 @@ function Header() {
           <button>
             <FavoriteIcon />
           </button>
-          <button id="arrow_drop_down">
+          <button id="arrow_drop_down" onClick={(event) =>{
+              event.stopPropagation();
+              setisProfileDropDownActivated(prev => !prev);
+
+          } }>
+
             <ArrowDropDownIcon />
           </button>
           <button id="myButton">
             <img src={profile} alt="Profile" />
           </button>
 
-          <div className="profile-drop-down-menu" id="profile_menu">
-            <div className="profile-menu">
+          <div className={"profile-drop-down-menu" + (isProfileDropDownActivated ? " open-menu" : "")} id="profile_menu">
+            <div 
+              className="profile-menu"
+              >
               <div className="user-info">
                 <img src={profile} alt="User" />
                 <h3>Naveen Reddy</h3>

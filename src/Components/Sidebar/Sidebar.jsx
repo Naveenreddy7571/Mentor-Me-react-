@@ -12,7 +12,7 @@ import {
 } from "@mui/icons-material";
 
 function Sidebar({ selectedComponent, setSelectedComponent }) {
-  const sideBarDetails = [
+  const sideBarItemsList = [
     { icon: <HomeIcon />, name: "Feed" },
     { icon: <ExploreIcon />, name: "Search" },
     { icon: <ContactSupportIcon />, name: "Ask Question" },
@@ -23,20 +23,26 @@ function Sidebar({ selectedComponent, setSelectedComponent }) {
     { icon: <HelpOutlineIcon />, name: "Help & Support" },
   ];
 
-  const handleClick = (nameOfOption) => {
-    setSelectedComponent(nameOfOption);
-  };
-
   return (
-    <div id="sidebar" className="sidebar">
-      {sideBarDetails.map((value, index) => (
-        <div id="sidebar-optn" className="sidebaroption" key={index}>
+    <div 
+      id="sidebar" 
+      className="sidebar"
+    >
+      {sideBarItemsList.map((value, index) => (
+        <div 
+          id="sidebar-optn" 
+          className="sidebaroption" 
+          key={index}
+        >
           {value.icon}
-          <button 
-          id="nav-bar-button" 
-          onClick={() => handleClick(value.name)}
+          <button
+            id="nav-bar-button"
+            onClick={() => setSelectedComponent(value.name)}
           >
-            <h2 className={(selectedComponent === value.name)?('active'):('')}>{value.name}</h2>
+            <h2 
+              className={selectedComponent === value.name ? "active" : ""}>
+              {value.name}
+            </h2>
           </button>
         </div>
       ))}
